@@ -9,7 +9,12 @@ interface StackProps {
 interface AvatarProps {
   border?: boolean;
 }
-
+interface FavoriteAvatarProps {
+  status?: 'online' | 'busy';
+}
+interface StatusIndicatorProps {
+  status: 'online' | 'busy';
+}
 export const Container = styled.div`
   min-height: 100vh;
   width: 100%;
@@ -212,6 +217,87 @@ export const PointsContainer = styled.div`
     right: -6px;
     padding: 2px;
   }
+`;
+export const ProfileCardTransparent = styled.div`
+  background-color: transparent !important;
+  border-radius: 1rem;
+  margin: -3rem 1rem 1rem;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+`;
+export const FavoritesCard = styled(ProfileCardTransparent)`
+  margin-top: 0.5rem;
+  background-color: transparent !important;
+`;
+
+export const FavoritesTitle = styled.h3`
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: ${props => props.theme.colors.text.black};
+  margin: 0;
+`;
+
+export const FavoritesList = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const FavoriteItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 60px;
+`;
+
+export const FavoriteAvatar = styled.div<FavoriteAvatarProps>`
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid ${props => props.status === 'online' ? props.theme.colors.success.main : props.status === 'busy' ? props.theme.colors.warning.main : props.theme.colors.text.black};
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+
+  .status-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: ${props => props.status === 'online' ? props.theme.colors.success.main : props.status === 'busy' ? props.theme.colors.warning.main : props.theme.colors.text.black};
+    border: 2px solid ${props => props.theme.colors.text.white};
+  }
+`;
+export const FavoriteAvatarWrapper = styled.div`
+  position: relative;
+`;
+
+
+
+
+export const StatusIndicator = styled.div<StatusIndicatorProps>`
+  position: absolute;
+  right: -2px;
+  bottom: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: ${props => props.status === 'online' ? props.theme.colors.success.main : props.theme.colors.warning.main};
+`;
+
+export const FavoriteName = styled.span`
+  font-size: 0.875rem;
+  color: ${props => props.theme.colors.text.black};
 `;
 
 export const BottomNav = styled.nav`
