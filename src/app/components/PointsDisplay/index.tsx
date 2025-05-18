@@ -23,10 +23,10 @@ export const PointsDisplay = ({
 			className={onClick ? 'clickable' : ''}
 		>
 			<span className="points">
-				{points}
 				<div className="coin-icon">
 					<FaDollarSign size={10} />
 				</div>
+				{points}
 			</span>
 			{showAddButton && <span className="coin">+</span>}
 		</PointsContainer>
