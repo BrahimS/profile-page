@@ -15,6 +15,7 @@ import {
 	UserName,
 	UserSubtext,
 } from '../../styles';
+import { PointsDisplay } from '../PointsDisplay';
 
 export const Header = () => {
 	const handlePointsClick = () => {
@@ -29,6 +30,7 @@ export const Header = () => {
 					<span>Retour</span>
 				</BackButton>
 				<HeaderTitle>Mon profil</HeaderTitle>
+				<PointsDisplay points={0} onClick={handlePointsClick} />
 			</HeaderTop>
 			<ProfileInfo>
 				<Avatar>
@@ -46,6 +48,7 @@ export const Header = () => {
 							<span>Gémeaux</span>
 						</UserSubtext>
 					</Stack>
+					<PointsDisplay points={0} maxWidth="60px" />
 				</UserInfo>
 			</ProfileInfo>
 		</HeaderWrapper>
