@@ -1,20 +1,26 @@
-import Link from 'next/link';
 import styled from 'styled-components';
-
+import Link from 'next/link';
 
 interface StackProps {
   iscenter?: boolean;
 }
 
-interface AvatarProps {
-  border?: boolean;
-}
 interface FavoriteAvatarProps {
   status?: 'online' | 'busy';
 }
+
+interface MenuCardProps {
+  isTransparent?: boolean;
+}
+
 interface StatusIndicatorProps {
   status: 'online' | 'busy';
 }
+
+interface AvatarProps {
+  border?: boolean;
+}
+
 export const Container = styled.div`
   min-height: 100vh;
   width: 100%;
@@ -42,7 +48,8 @@ export const Header = styled.header`
     left: -1px;
     right: -1px;
     height: 350px;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 350' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23f5f5f5' stop-opacity='0'/%3E%3Cstop offset='20%25' stop-color='%23f5f5f5' stop-opacity='0.2'/%3E%3Cstop offset='40%25' stop-color='%23f5f5f5' stop-opacity='0.4'/%3E%3Cstop offset='60%25' stop-color='%23f5f5f5' stop-opacity='0.6'/%3E%3Cstop offset='80%25' stop-color='%23f5f5f5' stop-opacity='0.8'/%3E%3Cstop offset='100%25' stop-color='%23f5f5f5' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23wave-gradient)' d='M0,288 C240,272 480,256 720,272 C960,288 1200,304 1440,288 L1440,320 L0,320 Z'/%3E%3C/svg%3E");
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 350' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23f5f5f5' stop-opacity='0'/%3E%3Cstop offset='20%25' stop-color='%23f5f5f5' stop-opacity='0.2'/%3E%3Cstop offset='40%25' stop-color='%23f5f5f5' stop-opacity='0.4'/%3E%3Cstop offset='60%25' stop-color='%23f5f5f5' stop-opacity='0.6'/%3E%3Cstop offset='80%25' stop-color='%23f5f5f5' stop-opacity='0.8'/%3E%3Cstop offset='100%25' stop-color='%23f5f5f5' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23wave-gradient)' d='M0,288 C240,272 480,256 720,272 C960,288 1200,304 1440,288 L1440,320 L0,320 Z'/%3E%3C/svg%3E");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -77,14 +84,73 @@ export const BackButton = styled(Link)`
     opacity: 0.9;
   }
 `;
+
 export const HeaderTitle = styled.h1`
   color: ${props => props.theme.colors.text.white};
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+`;
+
+export const ProfileCard = styled.div`
+  background-color: ${props => props.theme.colors.background.white};
+  border-radius: 1rem;
+  margin: -3rem 1rem 1rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+`;
+export const ProfileCardTransparent = styled.div`
+  background-color: transparent !important;
+  border-radius: 1rem;
+  margin: -3rem 1rem 1rem;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+`;
+
+export const ProfileInfo = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+`;
+
+export const Stack = styled.div<StackProps>`
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  ${props => props.iscenter && `
+    align-items: center;
+    text-align: center;
+  `}
+`;
+
+export const Row = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const FavoriteAvatarWrapper = styled.div`
+  position: relative;
+`;
+
+export const StatusIndicator = styled.div<StatusIndicatorProps>`
+  position: absolute;
+  right: -2px;
+  bottom: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: ${props => props.status === 'online' ? props.theme.colors.success.main : props.theme.colors.warning.main};
 `;
 
 export const Avatar = styled.div<AvatarProps>`
@@ -106,15 +172,7 @@ export const Avatar = styled.div<AvatarProps>`
     color: ${props => props.theme.colors.primary.main};
   }
 `;
-export const ProfileInfo = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-`;
+
 export const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -139,22 +197,6 @@ export const UserSubtext = styled.span`
   svg {
     color: ${props => props.theme.colors.text.white};
   }
-`;
-
-export const Stack = styled.div<StackProps>`
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  ${props => props.iscenter && `
-    align-items: center;
-    text-align: center;
-  `}
-`;
-
-export const Row = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 `;
 
 export const PointsContainer = styled.div`
@@ -218,14 +260,7 @@ export const PointsContainer = styled.div`
     padding: 2px;
   }
 `;
-export const ProfileCardTransparent = styled.div`
-  background-color: transparent !important;
-  border-radius: 1rem;
-  margin: -3rem 1rem 1rem;
-  padding: 1.5rem;
-  position: relative;
-  z-index: 1;
-`;
+
 export const FavoritesCard = styled(ProfileCardTransparent)`
   margin-top: 0.5rem;
   background-color: transparent !important;
@@ -245,6 +280,7 @@ export const FavoritesList = styled.div`
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -259,8 +295,8 @@ export const FavoriteItem = styled.div`
 `;
 
 export const FavoriteAvatar = styled.div<FavoriteAvatarProps>`
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 2px solid ${props => props.status === 'online' ? props.theme.colors.success.main : props.status === 'busy' ? props.theme.colors.warning.main : props.theme.colors.text.black};
   overflow: hidden;
@@ -278,26 +314,79 @@ export const FavoriteAvatar = styled.div<FavoriteAvatarProps>`
     border: 2px solid ${props => props.theme.colors.text.white};
   }
 `;
-export const FavoriteAvatarWrapper = styled.div`
-  position: relative;
-`;
-
-
-
-
-export const StatusIndicator = styled.div<StatusIndicatorProps>`
-  position: absolute;
-  right: -2px;
-  bottom: 6px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: ${props => props.status === 'online' ? props.theme.colors.success.main : props.theme.colors.warning.main};
-`;
 
 export const FavoriteName = styled.span`
   font-size: 0.875rem;
   color: ${props => props.theme.colors.text.black};
+`;
+
+export const MenuCard = styled.div<MenuCardProps>`
+  background-color: ${props => props.isTransparent ? 'transparent' : props.theme.colors.background.white};
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: ${props => props.isTransparent ? '0 1.5rem' : '1rem  1.5rem'};
+  box-shadow: ${props => props.isTransparent ? 'none' : '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'};
+`;
+
+export const MenuItem = styled.div`
+  padding: 0.8rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+export const MenuText = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: ${props => props.theme.colors.text.black};
+  font-size: 1rem;
+
+  .menu-item-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .right-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: ${props => props.theme.colors.text.gray};
+  }
+
+  .payment-method,
+  .language {
+    font-size: 0.9rem;
+    color: ${props => props.theme.colors.text.gray};
+  }
+
+  .icon {
+    font-size: 1.25rem;
+    color: ${props => props.theme.colors.primary.main};
+  }
+
+  svg {
+    color: ${props => props.theme.colors.text.gray};
+  }
+`;
+
+export const ModifierButton = styled.button`
+  color: ${props => props.theme.colors.primary.main};
+  border: 1px solid ${props => props.theme.colors.primary.main};
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${props => props.theme.colors.primary.main};
+    color: ${props => props.theme.colors.text.white};
+  }
 `;
 
 export const BottomNav = styled.nav`
