@@ -166,6 +166,7 @@ export const Avatar = styled.div<AvatarProps>`
   flex-shrink: 0;
   padding: 12px;
 
+
   span {
     font-size: 2rem;
     font-weight: 500;
@@ -295,13 +296,14 @@ export const FavoriteItem = styled.div`
 `;
 
 export const FavoriteAvatar = styled.div<FavoriteAvatarProps>`
-  width: 60px;
-  height: 60px;
+
   border-radius: 50%;
   border: 2px solid ${props => props.status === 'online' ? props.theme.colors.success.main : props.status === 'busy' ? props.theme.colors.warning.main : props.theme.colors.text.black};
   overflow: hidden;
   flex-shrink: 0;
   position: relative;
+  object-fit: contain;
+  background-size: cover;
 
   .status-indicator {
     position: absolute;
