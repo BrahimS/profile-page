@@ -35,7 +35,7 @@ declare module 'styled-components' {
 export const theme = {
   colors: {
     primary: {
-      main: '#007AFF',
+      main: '#118787',
     },
     secondary: {
       main: '#5856D6',
@@ -45,10 +45,10 @@ export const theme = {
       white: '#FFFFFF',
     },
     text: {
-      main: '#1C1C1E',
+      main: '#1F1F1F',
       white: '#FFFFFF',
       black: '#000000',
-      gray: '#8E8E93',
+      gray: '#BFBFBF',
     },
     success: {
       main: '#34C759',
