@@ -1,8 +1,15 @@
+'use client';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Lato } from 'next/font/google';
 import './styles/globals.css';
 import { Providers } from './providers';
+import { Footer } from './components/ui/Footer';
+import { BottomNavigation } from './components/BottomNavigation';
+
+import { HeaderContent } from './components/HeaderContent';
+import { Header } from './components/ui/Header';
+import { Main } from './components/ui/Main';
 
 const lato = Lato({
 	weight: ['400', '700'],
@@ -20,7 +27,7 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
 	title: 'Movie App',
 	description: 'A movie library app built with Next.js',
 };
@@ -35,7 +42,15 @@ export default function RootLayout({
 			<body
 				className={`${lato.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<Providers>{children}</Providers>
+				<Header>
+					<HeaderContent />
+				</Header>
+				<Providers>
+					<Main>{children}</Main>
+				</Providers>
+				<Footer>
+					<BottomNavigation />
+				</Footer>
 			</body>
 		</html>
 	);

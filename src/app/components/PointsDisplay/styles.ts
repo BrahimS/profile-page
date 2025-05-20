@@ -1,7 +1,8 @@
+import { theme } from '@/app/theme';
 import styled from 'styled-components';
 
 export const PointsContainer = styled.div`
-	background-color: ${(props) => props.theme.colors.background.white};
+	background-color: ${theme.colors.background.white};
 	border-radius: 20px;
 	padding: 0.25rem 0.75rem;
 	display: flex;
@@ -22,7 +23,7 @@ export const PointsContainer = styled.div`
 		}
 	}
 	.points {
-		color: ${(props) => props.theme.colors.text.black};
+		color: ${theme.colors.text.black};
 		font-weight: 500;
 		display: flex;
 		align-items: center;
@@ -53,8 +54,8 @@ export const PointsContainer = styled.div`
 		top: -6px;
 		right: -6px;
 		padding: 2px;
-		background-color: ${(props) => props.theme.colors.primary.light};
-		color: ${(props) => props.theme.colors.text.white};
+		background-color: ${theme.colors.primary.light};
+		color: ${theme.colors.text.white};
 		font-size: 0.75rem;
 	}
 `;

@@ -16,7 +16,7 @@ export const ProfileCardTransparent = styled.section`
 	z-index: 1;
 `;
 export const FavoritesCard = styled(ProfileCardTransparent)`
-	background-color: transparent !important;
+	background-color: ${theme.colors.background.main} !important;
 `;
 export const FavoritesTitle = styled.h3`
 	font-size: 1.125rem;

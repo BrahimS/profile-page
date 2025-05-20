@@ -17,7 +17,7 @@ export const Container = styled.div`
 	align-items: stretch;
 	padding: 0 ${theme.spacing.lg};
 	margin: 0 auto;
-	max-width: ${(props) => props.theme.sizes.screen.maxWidth};
+	max-width: ${theme.sizes.screen.maxWidth};
 `;
 export const Row = styled.div`
 	display: flex;

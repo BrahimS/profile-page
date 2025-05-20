@@ -1,12 +1,11 @@
 'use client';
 import { FaUser, FaTag } from 'react-icons/fa';
 import { RxExit, RxTrash, RxChevronRight } from 'react-icons/rx';
-import { Header } from './components/Header';
 import { FavoritesSection } from './components/FavoritesSection';
 import { MenuSection } from './components/MenuSection';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BsBasket } from 'react-icons/bs';
-import { Divider } from './components/Divider';
+import { Divider } from './components/ui/Divider';
 import { theme } from './theme';
 
 export default function ProfilePage() {
@@ -62,21 +61,11 @@ export default function ProfilePage() {
 
 	return (
 		<>
-			<Header />
-			<main>
-				<FavoritesSection />
-				<MenuSection items={mainMenuItems} />
-				<MenuSection items={settingsMenuItems} isTransparent />
-				<Divider
-					height={5}
-					width="100%"
-					color={theme.colors.background.white}
-				/>
-				<MenuSection items={accountActionItems} isTransparent />
-			</main>
-			<footer>
-				<BottomNavigation />
-			</footer>
+			<FavoritesSection />
+			<MenuSection items={mainMenuItems} />
+			<MenuSection items={settingsMenuItems} isTransparent />
+			<Divider height={5} width="100%" color={theme.colors.background.white} />
+			<MenuSection items={accountActionItems} isTransparent />
 		</>
 	);
 }

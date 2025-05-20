@@ -1,15 +1,6 @@
+import { theme } from '@/app/theme';
 import Link from 'next/link';
 import styled from 'styled-components';
-
-export const BottomNav = styled.nav`
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: ${(props) => props.theme.colors.primary.main};
-	padding: 0.75rem 0;
-	z-index: 10;
-`;
 
 export const NavItems = styled.div`
 	display: flex;
@@ -27,7 +18,7 @@ export const NavLink = styled(Link)`
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
-	color: ${(props) => props.theme.colors.text.white};
+	color: ${theme.colors.text.white};
 	gap: 6px;
 	min-width: 60px;
 	text-align: center;
