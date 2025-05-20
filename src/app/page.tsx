@@ -1,20 +1,14 @@
 'use client';
 
-import {
-	FaUser,
-	FaTag,
-	FaHeadset,
-	FaCreditCard,
-	FaComments,
-	FaGlobe,
-} from 'react-icons/fa';
+import { FaUser, FaTag } from 'react-icons/fa';
 import { RxExit, RxTrash, RxChevronRight } from 'react-icons/rx';
-import { Container } from './styles';
 import { Header } from './components/Header';
 import { FavoritesSection } from './components/FavoritesSection';
 import { MenuSection } from './components/MenuSection';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BsBasket } from 'react-icons/bs';
+import { Divider } from './components/Divider';
+import { theme } from './theme';
 
 export default function ProfilePage() {
 	const mainMenuItems = [
@@ -27,28 +21,28 @@ export default function ProfilePage() {
 	];
 
 	const settingsMenuItems = [
-		{ icon: <FaHeadset className="icon" />, text: 'Support client' },
+		{ icon: null, text: 'Support client' },
 		{
-			icon: <FaCreditCard className="icon" />,
+			icon: null,
 			text: 'Préférences de paiement',
 			rightContent: (
 				<div className="right-content">
-					<span className="payment-method">Paypal</span>
-					<RxChevronRight size={20} />
+					<span style={{ color: 'grey' }}>Paypal</span>
+					<RxChevronRight size={20} style={{ color: 'grey' }} />
 				</div>
 			),
 		},
 		{
-			icon: <FaComments className="icon" />,
+			icon: null,
 			text: 'Préférences de communication',
 		},
 		{
-			icon: <FaGlobe className="icon" />,
+			icon: null,
 			text: 'Langue',
 			rightContent: (
 				<div className="right-content">
-					<span className="language">Français</span>
-					<RxChevronRight size={20} />
+					<span style={{ color: 'grey' }}>Français</span>
+					<RxChevronRight size={20} color="grey" />
 				</div>
 			),
 		},
@@ -68,13 +62,22 @@ export default function ProfilePage() {
 	];
 
 	return (
-		<Container>
+		<>
 			<Header />
-			<FavoritesSection />
-			<MenuSection items={mainMenuItems} />
-			<MenuSection items={settingsMenuItems} isTransparent />
-			<MenuSection items={accountActionItems} isTransparent />
-			<BottomNavigation />
-		</Container>
+			<main>
+				<FavoritesSection />
+				<MenuSection items={mainMenuItems} />
+				<MenuSection items={settingsMenuItems} isTransparent />
+				<Divider
+					height={5}
+					width="100%"
+					color={theme.colors.background.white}
+				/>
+				<MenuSection items={accountActionItems} isTransparent />
+			</main>
+			<footer>
+				<BottomNavigation />
+			</footer>
+		</>
 	);
 }

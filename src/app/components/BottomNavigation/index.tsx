@@ -16,8 +16,10 @@ export const BottomNavigation = () => {
 					</Stack>
 				</NavLink>
 				<NavLink href="/voyants">
-					<HiOutlineEye size={20} />
-					<span>Voyants</span>
+					<Stack iscenter>
+						<HiOutlineEye size={20} />
+						<span>Voyants</span>
+					</Stack>
 				</NavLink>
 				<NavLink href="/discussions">
 					<Stack iscenter>

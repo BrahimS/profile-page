@@ -8,6 +8,7 @@ interface PointsDisplayProps {
 	showAddButton?: boolean;
 	maxWidth?: string;
 	onClick?: () => void;
+	style?: React.CSSProperties;
 }
 
 export const PointsDisplay = ({
@@ -15,10 +16,11 @@ export const PointsDisplay = ({
 	showAddButton = true,
 	maxWidth,
 	onClick,
+	style,
 }: PointsDisplayProps) => {
 	return (
 		<PointsContainer
-			style={{ maxWidth: maxWidth }}
+			style={{ maxWidth: maxWidth, ...style }}
 			onClick={onClick}
 			className={onClick ? 'clickable' : ''}
 		>
@@ -28,7 +30,7 @@ export const PointsDisplay = ({
 				</div>
 				{points}
 			</span>
-			{showAddButton && <span className="coin">+</span>}
+			{showAddButton && <span className="plus">+</span>}
 		</PointsContainer>
 	);
 };

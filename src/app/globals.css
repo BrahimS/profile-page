@@ -63,7 +63,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   min-height: 100vh;
+  overflow-y: scroll;
   font-family: var(--font-lato);
-
-
+}
+main {
+  background:  var(--foreground);
+  margin-bottom: 3.5rem;
 }

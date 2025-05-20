@@ -1,7 +1,8 @@
 'use client';
 
 import { RxChevronRight } from 'react-icons/rx';
-import { MenuCard, MenuItem, MenuText } from '../../styles';
+import { Container, MenuCard, MenuItem, MenuText } from '../../styles';
+import { theme } from '@/app/theme';
 
 interface MenuItemType {
 	icon: React.ReactNode;
@@ -17,20 +18,29 @@ interface MenuSectionProps {
 
 export const MenuSection = ({ items, isTransparent }: MenuSectionProps) => {
 	return (
-		<MenuCard isTransparent={isTransparent}>
-			{items.map((item, index) => (
-				<MenuItem key={index}>
-					<MenuText>
-						<div
-							className={`menu-item-content ${item.isDanger ? 'danger' : ''}`}
-						>
-							{item.icon}
-							<span>{item.text}</span>
-						</div>
-						{item.rightContent || <RxChevronRight size={20} />}
-					</MenuText>
-				</MenuItem>
-			))}
-		</MenuCard>
+		<Container>
+			<MenuCard isTransparent={isTransparent}>
+				{items.map((item, index) => (
+					<MenuItem key={index}>
+						<MenuText>
+							<div
+								className={`menu-item-content ${item.isDanger ? 'danger' : ''}`}
+							>
+								{item.icon}
+								<span>{item.text}</span>
+							</div>
+							{item.rightContent || (
+								<RxChevronRight
+									size={20}
+									style={{
+										color: isTransparent ? 'grey' : theme.colors.primary.main,
+									}}
+								/>
+							)}
+						</MenuText>
+					</MenuItem>
+				))}
+			</MenuCard>
+		</Container>
 	);
 };

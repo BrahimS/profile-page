@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import {
+	Container,
 	FavoriteAvatar,
 	FavoriteAvatarWrapper,
 	FavoriteItem,
@@ -32,25 +33,27 @@ const favorites: Favorite[] = [
 export const FavoritesSection = () => {
 	return (
 		<FavoritesCard>
-			<FavoritesTitle>Mes favoris</FavoritesTitle>
-			<FavoritesList>
-				{favorites.map((favorite) => (
-					<FavoriteItem key={favorite.id}>
-						<FavoriteAvatarWrapper>
-							<FavoriteAvatar status={favorite.status}>
-								<Image
-									src={favorite.image}
-									alt={favorite.name}
-									width={60}
-									height={60}
-								/>
-							</FavoriteAvatar>
-							<StatusIndicator status={favorite.status} />
-						</FavoriteAvatarWrapper>
-						<FavoriteName>{favorite.name}</FavoriteName>
-					</FavoriteItem>
-				))}
-			</FavoritesList>
+			<Container>
+				<FavoritesTitle>Mes favoris</FavoritesTitle>
+				<FavoritesList>
+					{favorites.map((favorite) => (
+						<FavoriteItem key={favorite.id}>
+							<FavoriteAvatarWrapper>
+								<FavoriteAvatar status={favorite.status}>
+									<Image
+										src={favorite.image}
+										alt={favorite.name}
+										width={60}
+										height={60}
+									/>
+								</FavoriteAvatar>
+								<StatusIndicator status={favorite.status} />
+							</FavoriteAvatarWrapper>
+							<FavoriteName>{favorite.name}</FavoriteName>
+						</FavoriteItem>
+					))}
+				</FavoritesList>
+			</Container>
 		</FavoritesCard>
 	);
 };

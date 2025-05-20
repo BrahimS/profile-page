@@ -30,6 +30,17 @@ declare module 'styled-components' {
         main: string;
       };
     };
+    spacing: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    sizes: {
+      screen: {
+        maxWidth: string;
+      }
+    }
   }
 }
 
@@ -62,4 +73,15 @@ export const theme = {
       main: '#FF3B30',
     },
   },
+  spacing: {
+    sm: '0.25rem',
+    md: '0.5rem',
+    lg: '1rem',
+    xl: '2rem',
+  },
+  sizes: {
+    screen: {
+    maxWidth: '1200px'
+    }
+  }
 };
