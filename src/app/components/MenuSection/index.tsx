@@ -4,13 +4,7 @@ import { RxChevronRight } from 'react-icons/rx';
 import { theme } from '@/app/theme';
 import { MenuCard, MenuItem, MenuText } from './styles';
 import { Container } from '@/app/styles/common';
-
-interface MenuItemType {
-	icon: React.ReactNode;
-	text: string;
-	rightContent?: React.ReactNode;
-	isDanger?: boolean;
-}
+import { MenuItemType } from '@/app/types';
 
 interface MenuSectionProps {
 	items: MenuItemType[];

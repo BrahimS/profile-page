@@ -12,15 +12,7 @@ import {
 	StatusIndicator,
 } from './styles';
 import { Container } from '@/app/styles/common';
-
-type Status = 'online' | 'busy';
-
-interface Favorite {
-	id: number;
-	name: string;
-	image: string;
-	status: Status;
-}
+import { Favorite } from '@/app/types';
 
 const favorites: Favorite[] = [
 	{ id: 1, name: 'Bella', image: '/images/1.png', status: 'online' },
