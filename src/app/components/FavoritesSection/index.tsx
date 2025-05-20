@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import {
-	Container,
 	FavoriteAvatar,
 	FavoriteAvatarWrapper,
 	FavoriteItem,
@@ -11,7 +10,8 @@ import {
 	FavoritesList,
 	FavoritesTitle,
 	StatusIndicator,
-} from '../../styles';
+} from './styles';
+import { Container } from '@/app/styles/common';
 
 type Status = 'online' | 'busy';
 

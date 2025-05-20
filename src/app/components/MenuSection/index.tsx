@@ -1,8 +1,9 @@
 'use client';
 
 import { RxChevronRight } from 'react-icons/rx';
-import { Container, MenuCard, MenuItem, MenuText } from '../../styles';
 import { theme } from '@/app/theme';
+import { MenuCard, MenuItem, MenuText } from './styles';
+import { Container } from '@/app/styles/common';
 
 interface MenuItemType {
 	icon: React.ReactNode;

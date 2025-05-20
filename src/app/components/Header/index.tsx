@@ -2,22 +2,21 @@
 
 import { RxChevronLeft } from 'react-icons/rx';
 import { GiGemini } from 'react-icons/gi';
-
 import {
-	Avatar,
-	BackButton,
 	Header as HeaderWrapper,
-	HeaderTitle,
 	HeaderTop,
+	HeaderTitle,
+	BackButton,
 	ProfileInfo,
-	Stack,
+	Avatar,
 	UserInfo,
 	UserName,
 	UserSubtext,
-	Container,
-} from '../../styles';
+} from './styles';
+
 import { PointsDisplay } from '../PointsDisplay';
 import { theme } from '@/app/theme';
+import { Container, Stack } from '@/app/styles/common';
 
 export const Header = () => {
 	const handlePointsClick = () => {

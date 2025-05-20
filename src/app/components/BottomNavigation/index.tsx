@@ -3,7 +3,9 @@
 import { AiOutlineHome } from 'react-icons/ai';
 import { HiOutlineEye } from 'react-icons/hi';
 import { BsChat, BsBasket } from 'react-icons/bs';
-import { BottomNav, NavItems, NavLink, Stack } from '../../styles';
+
+import { BottomNav, NavItems, NavLink } from './styles';
+import { Stack } from '@/app/styles/common';
 
 export const BottomNavigation = () => {
 	return (

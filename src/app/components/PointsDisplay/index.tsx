@@ -1,7 +1,7 @@
 'use client';
 
 import { FaDollarSign } from 'react-icons/fa';
-import { PointsContainer } from '../../styles';
+import { PointsContainer } from './styles';
 
 interface PointsDisplayProps {
 	points: number;

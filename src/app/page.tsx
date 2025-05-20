@@ -1,5 +1,4 @@
 'use client';
-
 import { FaUser, FaTag } from 'react-icons/fa';
 import { RxExit, RxTrash, RxChevronRight } from 'react-icons/rx';
 import { Header } from './components/Header';
