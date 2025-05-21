@@ -73,9 +73,9 @@ export default function ProfilePage() {
 		<>
 			<FavoritesSection />
 			<MenuSection items={mainMenuItems} />
-			<MenuSection items={settingsMenuItems} isTransparent />
+			<MenuSection items={settingsMenuItems} istransparent />
 			<Divider height={5} width="100%" color={theme.colors.background.white} />
-			<MenuSection items={accountActionItems} isTransparent />
+			<MenuSection items={accountActionItems} istransparent />
 		</>
 	);
 }

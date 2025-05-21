@@ -1,5 +1,5 @@
-import { theme } from '@/app/theme';
 import styled from 'styled-components';
+import { theme } from '../../theme';
 
 export const PointsContainer = styled.div`
 	background-color: ${theme.colors.background.white};
