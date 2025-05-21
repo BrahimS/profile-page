@@ -6,5 +6,7 @@ interface Props {
 	style?: React.CSSProperties;
 }
 export const Footer = ({ children, style }: Props): React.JSX.Element => (
-	<FooterWrapper style={{ ...style }}>{children}</FooterWrapper>
+	<FooterWrapper data-testid="footer" style={{ ...style }}>
+		{children}
+	</FooterWrapper>
 );

@@ -9,6 +9,7 @@ interface Props {
 export const Divider = (props: Props) => {
 	return (
 		<div
+			data-testid="divider"
 			style={{
 				height: props.height,
 				width: props.width,
