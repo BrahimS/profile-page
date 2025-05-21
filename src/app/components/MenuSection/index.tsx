@@ -25,7 +25,13 @@ export const MenuSection = ({ items, $istransparent }: MenuSectionProps) => {
 									}`}
 								>
 									{item.icon}
-									<span>{item.text}</span>
+									<span
+										style={{
+											fontSize: `${theme.media.sm ? theme.fontSize.sm : theme.fontSize.lg}`,
+										}}
+									>
+										{item.text}
+									</span>
 								</div>
 								{item.rightContent || (
 									<RxChevronRight
