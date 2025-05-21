@@ -2,9 +2,9 @@
 
 import { RxChevronRight } from 'react-icons/rx';
 import { theme } from '@/app/theme';
-import { MenuCard, MenuItem, MenuText } from './styles';
 import { Container } from '@/app/styles/common';
 import { MenuItemType } from '@/app/types';
+import { MenuCard, MenuItem, MenuText } from './styles';
 
 interface MenuSectionProps {
 	items: MenuItemType[];

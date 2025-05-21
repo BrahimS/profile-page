@@ -2,14 +2,13 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Lato } from 'next/font/google';
-import './styles/globals.css';
 import { Providers } from './providers';
 import { Footer } from './components/ui/Footer';
 import { BottomNavigation } from './components/BottomNavigation';
-
 import { HeaderContent } from './components/HeaderContent';
 import { Header } from './components/ui/Header';
 import { Main } from './components/ui/Main';
+import './styles/globals.css';
 
 const lato = Lato({
 	weight: ['400', '700'],

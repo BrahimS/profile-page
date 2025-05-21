@@ -3,7 +3,6 @@
 import { AiOutlineHome } from 'react-icons/ai';
 import { HiOutlineEye } from 'react-icons/hi';
 import { BsChat, BsBasket } from 'react-icons/bs';
-
 import { NavItems, NavLink } from './styles';
 import { Stack } from '@/app/styles/common';
 

@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { FAVORITES } from '@/app/constants';
+import { Container } from '@/app/styles/common';
 import {
 	FavoriteAvatar,
 	FavoriteAvatarWrapper,
@@ -11,16 +13,6 @@ import {
 	FavoritesTitle,
 	StatusIndicator,
 } from './styles';
-import { Container } from '@/app/styles/common';
-import { Favorite } from '@/app/types';
-
-const favorites: Favorite[] = [
-	{ id: 1, name: 'Bella', image: '/images/1.png', status: 'online' },
-	{ id: 2, name: 'Gloria', image: '/images/2.png', status: 'online' },
-	{ id: 3, name: 'Donis', image: '/images/3.png', status: 'busy' },
-	{ id: 4, name: 'Anais', image: '/images/4.png', status: 'busy' },
-	{ id: 5, name: 'Alcee', image: '/images/5.png', status: 'online' },
-];
 
 export const FavoritesSection = () => {
 	return (
@@ -28,7 +20,7 @@ export const FavoritesSection = () => {
 			<Container>
 				<FavoritesTitle>Mes favoris</FavoritesTitle>
 				<FavoritesList>
-					{favorites.map((favorite) => (
+					{FAVORITES.map((favorite) => (
 						<FavoriteItem key={favorite.id}>
 							<FavoriteAvatarWrapper>
 								<FavoriteAvatar status={favorite.status}>
