@@ -8,14 +8,14 @@ import { MenuCard, MenuItem, MenuText } from './styles';
 
 interface MenuSectionProps {
 	items: MenuItemType[];
-	istransparent?: boolean;
+	$istransparent?: boolean;
 }
 
-export const MenuSection = ({ items, istransparent }: MenuSectionProps) => {
+export const MenuSection = ({ items, $istransparent }: MenuSectionProps) => {
 	return (
 		<main>
 			<Container>
-				<MenuCard istransparent={istransparent}>
+				<MenuCard $istransparent={$istransparent}>
 					{items.map((item, index) => (
 						<MenuItem key={index}>
 							<MenuText>
@@ -31,7 +31,9 @@ export const MenuSection = ({ items, istransparent }: MenuSectionProps) => {
 									<RxChevronRight
 										size={20}
 										style={{
-											color: istransparent ? 'grey' : theme.colors.primary.main,
+											color: $istransparent
+												? 'grey'
+												: theme.colors.primary.main,
 										}}
 									/>
 								)}

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../theme';
 
 interface StackProps {
-	iscenter?: boolean;
+	$iscenter?: boolean;
 }
 
 export const Container = styled.div`
@@ -24,7 +24,7 @@ export const Stack = styled.div<StackProps>`
 	flex-direction: column;
 	gap: 0.1rem;
 	${(props) =>
-		props.iscenter &&
+		props.$iscenter &&
 		`
     align-items: center;
     text-align: center;

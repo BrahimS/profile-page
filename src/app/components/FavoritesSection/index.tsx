@@ -23,7 +23,7 @@ export const FavoritesSection = () => {
 					{FAVORITES.map((favorite) => (
 						<FavoriteItem key={favorite.id}>
 							<FavoriteAvatarWrapper>
-								<FavoriteAvatar status={favorite.status}>
+								<FavoriteAvatar $status={favorite.status}>
 									<Image
 										src={favorite.image}
 										alt={favorite.name}
@@ -31,7 +31,7 @@ export const FavoritesSection = () => {
 										height={60}
 									/>
 								</FavoriteAvatar>
-								<StatusIndicator status={favorite.status} />
+								<StatusIndicator $status={favorite.status} />
 							</FavoriteAvatarWrapper>
 							<FavoriteName>{favorite.name}</FavoriteName>
 						</FavoriteItem>

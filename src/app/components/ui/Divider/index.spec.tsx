@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest';
 import { Divider } from './index';
 
 describe('Divider component', () => {
-	const children = <div>Test children</div>;
 	it('should render correctly', async () => {
 		const component = await render(
 			<Divider

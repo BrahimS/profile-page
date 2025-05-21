@@ -10,25 +10,25 @@ export const BottomNavigation = () => {
 	return (
 		<NavItems>
 			<NavLink href="/">
-				<Stack iscenter>
+				<Stack $iscenter>
 					<AiOutlineHome size={20} />
 					<span>Accueil</span>
 				</Stack>
 			</NavLink>
 			<NavLink href="/voyants">
-				<Stack iscenter>
+				<Stack $iscenter>
 					<HiOutlineEye size={20} />
 					<span>Voyants</span>
 				</Stack>
 			</NavLink>
 			<NavLink href="/discussions">
-				<Stack iscenter>
+				<Stack $iscenter>
 					<BsChat size={20} />
 					<span>Discussions</span>
 				</Stack>
 			</NavLink>
 			<NavLink href="/boutique">
-				<Stack iscenter>
+				<Stack $iscenter>
 					<BsBasket size={20} />
 					<span>Boutique</span>
 				</Stack>

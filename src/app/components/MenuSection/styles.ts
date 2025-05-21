@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 interface MenuCardProps {
-	istransparent?: boolean;
+	$istransparent?: boolean;
 }
 
 export const MenuCard = styled.div<MenuCardProps>`
 	background-color: ${(props) =>
-		props.istransparent ? 'transparent' : props.theme.colors.background.white};
+		props.$istransparent ? 'transparent' : props.theme.colors.background.white};
 	border-radius: 1rem;
 	margin: 1rem 0;
-	padding: ${(props) => (props.istransparent ? '0 1.5rem' : '1rem  1.5rem')};
+	padding: ${(props) => (props.$istransparent ? '0 1.5rem' : '1rem  1.5rem')};
 	box-shadow: ${(props) =>
-		props.istransparent
+		props.$istransparent
 			? 'none'
 			: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'};
 `;

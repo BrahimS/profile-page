@@ -44,7 +44,7 @@ export const HeaderContent = () => {
 					</span>
 				</Avatar>
 				<UserInfo>
-					<Stack iscenter={false}>
+					<Stack>
 						<UserName>Bonjour Manon !</UserName>
 						<UserSubtext>
 							<GiGemini size={17} />
