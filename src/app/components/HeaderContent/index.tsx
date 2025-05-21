@@ -35,9 +35,9 @@ export const HeaderContent = () => {
 				<Avatar>
 					<span
 						style={{
-							fontSize: '0.9rem',
+							fontSize: `${theme.media.sm ? theme.fontSize.md : theme.fontSize.lg}`,
 							fontWeight: '700',
-							color: '#008080',
+							color: theme.colors.primary.main,
 						}}
 					>
 						MA

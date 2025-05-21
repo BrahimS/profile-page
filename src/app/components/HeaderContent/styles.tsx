@@ -36,12 +36,12 @@ export const BackButton = styled(Link)`
 
 export const HeaderTitle = styled.h1`
 	color: ${theme.colors.text.white};
-	font-size: 1.25rem;
 	font-weight: 500;
 	margin: 0;
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
+	font-size: ${theme.media.sm ? theme.fontSize.sm : theme.fontSize.lg};
 `;
 export const Avatar = styled.div<AvatarProps>`
 	width: 80px;
@@ -81,7 +81,7 @@ export const UserName = styled.h2`
 	margin: 0;
 	color: ${theme.colors.text.white};
 	font-weight: 500;
-	font-size: 1.5rem;
+	font-size: ${theme.media.sm ? theme.fontSize.md : theme.fontSize.lg};
 `;
 
 export const UserSubtext = styled.span`

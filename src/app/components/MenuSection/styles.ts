@@ -8,8 +8,8 @@ export const MenuCard = styled.div<MenuCardProps>`
 	background-color: ${(props) =>
 		props.$istransparent ? 'transparent' : props.theme.colors.background.white};
 	border-radius: 1rem;
-	margin: 1rem 0;
-	padding: ${(props) => (props.$istransparent ? '0 1.5rem' : '1rem  1.5rem')};
+	margin: 1rem;
+	padding: ${(props) => (props.$istransparent ? '0 1rem' : '1rem')};
 	box-shadow: ${(props) =>
 		props.$istransparent
 			? 'none'
@@ -42,13 +42,13 @@ export const MenuText = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		color: ${(props) => props.theme.colors.primary.main};
+		color: {theme.colors.primary.main};
 	}
 
 	.payment-method,
 	.language {
-		font-size: 0.9rem;
 		color: ${(props) => props.theme.colors.text.gray};
+    font-size: 0.875rem;
 	}
 
 	.icon {

@@ -10,7 +10,7 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	padding: 0 ${theme.spacing.lg};
+	padding: ${theme.media.sm ? theme.spacing.sm : theme.spacing.lg} 0;
 	margin: 0 auto;
 	max-width: ${theme.sizes.screen.maxWidth};
 `;
