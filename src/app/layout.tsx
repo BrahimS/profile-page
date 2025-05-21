@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
 	title: 'Movie App',
 	description: 'A movie library app built with Next.js',
 };
