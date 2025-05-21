@@ -1,13 +1,13 @@
 'use client';
+import { useMemo } from 'react';
 import { FaUser, FaTag } from 'react-icons/fa';
 import { RxExit, RxTrash, RxChevronRight } from 'react-icons/rx';
 import { FavoritesSection } from './components/FavoritesSection';
 import { MenuSection } from './components/MenuSection';
 import { BsBasket } from 'react-icons/bs';
 import { Divider } from './components/ui/Divider';
-import { theme } from './theme';
 import { MenuItemType } from './types';
-import { useMemo } from 'react';
+import { theme } from './theme';
 
 export default function ProfilePage() {
 	const mainMenuItems = useMemo<MenuItemType[]>(
