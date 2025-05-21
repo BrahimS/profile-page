@@ -1,6 +1,6 @@
-import { theme } from '@/app/theme';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { theme } from '../../theme';
 
 interface AvatarProps {
 	border?: boolean;

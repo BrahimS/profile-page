@@ -3,7 +3,7 @@
 import { RxChevronLeft } from 'react-icons/rx';
 import { GiGemini } from 'react-icons/gi';
 import { PointsDisplay } from '../PointsDisplay';
-import { theme } from '@/app/theme';
+import { theme } from '../../theme';
 import { Container, Stack } from '@/app/styles/common';
 import {
 	HeaderTop,
@@ -44,7 +44,7 @@ export const HeaderContent = () => {
 					</span>
 				</Avatar>
 				<UserInfo>
-					<Stack iscenter={false}>
+					<Stack>
 						<UserName>Bonjour Manon !</UserName>
 						<UserSubtext>
 							<GiGemini size={17} />
