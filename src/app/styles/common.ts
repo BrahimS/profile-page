@@ -4,12 +4,7 @@ import { theme } from '../theme';
 interface StackProps {
 	iscenter?: boolean;
 }
-interface FavoriteAvatarProps {
-	status?: 'online' | 'busy';
-}
-interface StatusIndicatorProps {
-	status: 'online' | 'busy';
-}
+
 export const Container = styled.div`
 	width: 100%;
 	display: flex;

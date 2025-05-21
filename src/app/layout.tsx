@@ -26,9 +26,9 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-const metadata: Metadata = {
-	title: 'Movie App',
-	description: 'A movie library app built with Next.js',
+export const metadata: Metadata = {
+	title: 'Profile page',
+	description: 'A profile page layout',
 };
 
 export default function RootLayout({
