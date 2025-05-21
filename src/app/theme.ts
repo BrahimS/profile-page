@@ -1,5 +1,11 @@
 import 'styled-components';
 
+const breackpoints = {
+	sm: '640px',
+	md: '768px',
+	lg: '1024px',
+	xl: '1280px',
+} as const;
 declare module 'styled-components' {
 	export interface DefaultTheme {
 		colors: {
@@ -30,6 +36,19 @@ declare module 'styled-components' {
 				main: string;
 			};
 		};
+		fontSize: {
+			xs: string;
+			sm: string;
+			md: string;
+			lg: string;
+			xl: string;
+		};
+		media: {
+			sm: string;
+			md: string;
+			lg: string;
+			xl: string;
+		};
 		spacing: {
 			sm: string;
 			md: string;
@@ -49,6 +68,7 @@ export const theme = {
 		primary: {
 			main: '#118787',
 			light: '#5AAB29',
+			dark: '#015e5e',
 		},
 		secondary: {
 			main: '#5856D6',
@@ -73,6 +93,19 @@ export const theme = {
 			main: '#FF3B30',
 		},
 	},
+	fontSize: {
+		xs: '0.75rem',
+		sm: '0.875rem',
+		md: '1.2rem',
+		lg: '2rem',
+		xl: '3rem',
+	},
+	media: {
+		sm: `@media (min-width: ${breackpoints.sm})`,
+		md: `@media (min-width: ${breackpoints.md})`,
+		lg: `@media (min-width: ${breackpoints.lg})`,
+		xl: `@media (min-width: ${breackpoints.xl})`,
+	},
 	spacing: {
 		sm: '0.25rem',
 		md: '0.5rem',
@@ -81,7 +114,12 @@ export const theme = {
 	},
 	sizes: {
 		screen: {
-			maxWidth: '1200px',
+			maxWidth: breackpoints.xl,
+			padding: {
+				mobile: '1rem',
+				tablet: '2rem',
+				desktop: '3.5rem',
+			},
 		},
 	},
 };

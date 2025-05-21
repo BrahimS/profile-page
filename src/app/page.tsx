@@ -1,13 +1,15 @@
 'use client';
+import { useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { FaUser, FaTag } from 'react-icons/fa';
 import { RxExit, RxTrash, RxChevronRight } from 'react-icons/rx';
 import { FavoritesSection } from './components/FavoritesSection';
 import { MenuSection } from './components/MenuSection';
 import { BsBasket } from 'react-icons/bs';
 import { Divider } from './components/ui/Divider';
-import { theme } from './theme';
 import { MenuItemType } from './types';
-import { useMemo } from 'react';
+import { theme } from './theme';
+import { itemVariants } from './utils/animation';
 
 export default function ProfilePage() {
 	const mainMenuItems = useMemo<MenuItemType[]>(
@@ -70,12 +72,12 @@ export default function ProfilePage() {
 	);
 
 	return (
-		<>
+		<motion.div initial="hidden" animate="visible" variants={itemVariants}>
 			<FavoritesSection />
 			<MenuSection items={mainMenuItems} />
-			<MenuSection items={settingsMenuItems} isTransparent />
+			<MenuSection items={settingsMenuItems} $istransparent />
 			<Divider height={5} width="100%" color={theme.colors.background.white} />
-			<MenuSection items={accountActionItems} isTransparent />
-		</>
+			<MenuSection items={accountActionItems} $istransparent />
+		</motion.div>
 	);
 }

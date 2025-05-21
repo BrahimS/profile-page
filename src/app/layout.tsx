@@ -26,9 +26,9 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-	title: 'Movie App',
-	description: 'A movie library app built with Next.js',
+const metadata: Metadata = {
+	title: 'Profile page',
+	description: 'A profile page layout',
 };
 
 export default function RootLayout({
@@ -38,6 +38,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<head>
+				<title>{String(metadata.title)}</title>
+				<meta
+					name="description"
+					content={metadata.description ?? 'A profile page layout'}
+				/>
+			</head>
 			<body
 				className={`${lato.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>

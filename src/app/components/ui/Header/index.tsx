@@ -7,5 +7,9 @@ interface Props {
 }
 
 export const Header = ({ children, styles }: Props): React.JSX.Element => {
-	return <Headerwrapper style={{ ...styles }}>{children}</Headerwrapper>;
+	return (
+		<Headerwrapper data-testid="header" style={{ ...styles }}>
+			{children}
+		</Headerwrapper>
+	);
 };

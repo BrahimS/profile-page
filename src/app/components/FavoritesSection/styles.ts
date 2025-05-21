@@ -1,11 +1,11 @@
-import { theme } from '@/app/theme';
 import styled from 'styled-components';
+import { theme } from '../../theme';
 
 interface StatusIndicatorProps {
-	status: 'online' | 'busy';
+	$status: 'online' | 'busy';
 }
 interface FavoriteAvatarProps {
-	status?: 'online' | 'busy';
+	$status?: 'online' | 'busy';
 }
 
 export const ProfileCardTransparent = styled.section`
@@ -43,6 +43,7 @@ export const FavoriteItem = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
 	gap: 0.2rem;
 	min-width: 60px;
 `;
@@ -51,11 +52,11 @@ export const FavoriteAvatar = styled.div<FavoriteAvatarProps>`
 	border-radius: 50%;
 	border: 2px solid
 		${(props) =>
-			props.status === 'online'
+			props.$status === 'online'
 				? props.theme.colors.success.main
-				: props.status === 'busy'
-				? props.theme.colors.warning.main
-				: props.theme.colors.text.black};
+				: props.$status === 'busy'
+					? props.theme.colors.warning.main
+					: props.theme.colors.text.black};
 	overflow: hidden;
 	flex-shrink: 0;
 	position: relative;
@@ -84,7 +85,7 @@ export const StatusIndicator = styled.div<StatusIndicatorProps>`
 	border-radius: 50%;
 	border: 1px solid ${(props) => props.theme.colors.background.white};
 	background-color: ${(props) =>
-		props.status === 'online'
+		props.$status === 'online'
 			? props.theme.colors.success.main
 			: props.theme.colors.warning.main};
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../theme';
 
 interface StackProps {
-	iscenter?: boolean;
+	$iscenter?: boolean;
 }
 
 export const Container = styled.div`
@@ -10,7 +10,7 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	padding: 0 ${theme.spacing.lg};
+	padding: ${theme.media.sm ? theme.spacing.sm : theme.spacing.lg} 0;
 	margin: 0 auto;
 	max-width: ${theme.sizes.screen.maxWidth};
 `;
@@ -24,7 +24,7 @@ export const Stack = styled.div<StackProps>`
 	flex-direction: column;
 	gap: 0.1rem;
 	${(props) =>
-		props.iscenter &&
+		props.$iscenter &&
 		`
     align-items: center;
     text-align: center;

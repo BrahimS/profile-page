@@ -1,21 +1,21 @@
 'use client';
 
 import { RxChevronRight } from 'react-icons/rx';
-import { theme } from '@/app/theme';
 import { Container } from '@/app/styles/common';
 import { MenuItemType } from '@/app/types';
+import { theme } from '../../theme';
 import { MenuCard, MenuItem, MenuText } from './styles';
 
 interface MenuSectionProps {
 	items: MenuItemType[];
-	isTransparent?: boolean;
+	$istransparent?: boolean;
 }
 
-export const MenuSection = ({ items, isTransparent }: MenuSectionProps) => {
+export const MenuSection = ({ items, $istransparent }: MenuSectionProps) => {
 	return (
 		<main>
 			<Container>
-				<MenuCard isTransparent={isTransparent}>
+				<MenuCard $istransparent={$istransparent}>
 					{items.map((item, index) => (
 						<MenuItem key={index}>
 							<MenuText>
@@ -25,13 +25,21 @@ export const MenuSection = ({ items, isTransparent }: MenuSectionProps) => {
 									}`}
 								>
 									{item.icon}
-									<span>{item.text}</span>
+									<span
+										style={{
+											fontSize: `${theme.media.sm ? theme.fontSize.sm : theme.fontSize.lg}`,
+										}}
+									>
+										{item.text}
+									</span>
 								</div>
 								{item.rightContent || (
 									<RxChevronRight
 										size={20}
 										style={{
-											color: isTransparent ? 'grey' : theme.colors.primary.main,
+											color: $istransparent
+												? 'grey'
+												: theme.colors.primary.main,
 										}}
 									/>
 								)}
